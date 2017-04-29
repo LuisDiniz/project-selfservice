@@ -4,7 +4,7 @@
  * @param $mdSidenav
  * @constructor
  */
-function AppController(UsersDataService, $mdSidenav, $scope) {
+function AppController(UsersDataService, $mdSidenav, $scope, $mdDialog, homeController) {
   var self = this;
 
   self.selected     = null;
@@ -31,6 +31,22 @@ function AppController(UsersDataService, $mdSidenav, $scope) {
   function toggleUsersList() {
     $mdSidenav('left').toggle();
   }
+
+ //  $scope.showAdvanced = function(ev) {
+ //   $mdDialog.show({
+ //     controller: DialogController,
+ //     templateUrl: 'dialog1.tmpl.html',
+ //     parent: angular.element(document.body),
+ //     targetEvent: ev,
+ //     clickOutsideToClose:true,
+ //     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+ //   })
+ //   .then(function(answer) {
+ //     $scope.status = 'You said the information was "' + answer + '".';
+ //   }, function() {
+ //     $scope.status = 'You cancelled the dialog.';
+ //   });
+ // };
 
   /**
    * Select the current avatars

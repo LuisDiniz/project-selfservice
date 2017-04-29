@@ -24,29 +24,41 @@
     <h1>Donate</h1>
   </md-toolbar>
 
-  <!-- Container #2 -->
-  <div flex layout="row">
+  <!-- container -->
+  <div flex layout="row" >
 
-    <!-- sidenav -->
-    <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
-                md-component-id="left" ng-click="app.toggleList()">
-      <!-- Custom UsersList component -->
-      <users-list
+    <!-- menu -->
+    <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" ng-click="app.toggleList()">
+
+      <md-list>
+        <md-list-item layout="row" id="menu-header">
+          <img src="assets/img/perfil.jpg" class="md-avatar" alt="avatar">
+          <h2 class="usuario">Hayley</h2>
+        </md-list-item>
+
+        <md-list-item layout="column" style="margin-top: -25px">
+          <p class="pontos-text">Você possui:</p>
+          <h2 class="pontos">865</h2>
+          <p class="pontos-text">Pontos</p>
+        </md-list-item>
+      </md-list>
+
+      <!-- <users-list
           users="app.users"
           selected="app.selected"
           on-selected="app.selectUser(user)">
-      </users-list>
+      </users-list> -->
     </md-sidenav>
 
     <!-- main content -->
-    <md-content flex id="content" layout="row" layout-xs="column">
+    <md-content flex id="content" layout="row" layout-xs="row" layout-wrap style="overflow: scroll">
 
-      <md-card flex flex-gt-md="30">
-        <img src="https://material.angularjs.org/latest/img/washedout.png" class="md-card-image" alt="Washed Out">
+      <md-card flex flex-gt-md="30" flex="30" flex-xs="100" flex-gt-xs="100" ng-click="showAdvanced($event)">
+        <img src="assets/img/brinquedo.jpg" class="md-card-image" alt="Washed Out">
         <md-card-content>
-          <h2 class="md-title">Paracosm</h2>
+          <h2 class="md-title">Doação de Brinquedos</h2>
           <p>
-            The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+            Iniciou, no último dia 19, a Campanha de doação de brinquedos novos ou usados do setor de limpeza e conservação. Organizado pela Federação Nacional das Empresas Prestadoras de Serviços de Limpeza e Conservação...
           </p>
         </md-card-content>
        <!--  <div class="md-actions" layout="row" layout-align="end center">
@@ -54,12 +66,41 @@
           <md-button>Action 2</md-button>
         </div> -->
       </md-card>
-      <md-card flex flex-gt-md="30">
-        <img src="https://material.angularjs.org/latest/img/washedout.png" class="md-card-image" alt="Washed Out">
+
+      <md-card flex flex-gt-md="30" flex="30" flex-xs="100" flex-gt-xs="100">
+        <img src="assets/img/leite.jpg" class="md-card-image" alt="Washed Out">
         <md-card-content>
-          <h2 class="md-title">Paracosm</h2>
+          <h2 class="md-title">Doação de Leite</h2>
           <p>
-            The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+            Iniciou, no último dia 19, a Campanha de doação de brinquedos novos ou usados do setor de limpeza e conservação. Organizado pela Federação Nacional das Empresas Prestadoras de Serviços de Limpeza e Conservação...
+          </p>
+        </md-card-content>
+       <!--  <div class="md-actions" layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </div> -->
+      </md-card>
+
+      <md-card flex flex-gt-md="30" flex="30" flex-xs="100" flex-gt-xs="100">
+        <img src="assets/img/roupa.jpg" class="md-card-image" alt="Washed Out">
+        <md-card-content>
+          <h2 class="md-title">Doação de Roupa</h2>
+          <p>
+            Iniciou, no último dia 19, a Campanha de doação de brinquedos novos ou usados do setor de limpeza e conservação. Organizado pela Federação Nacional das Empresas Prestadoras de Serviços de Limpeza e Conservação...
+          </p>
+        </md-card-content>
+       <!--  <div class="md-actions" layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </div> -->
+      </md-card>
+
+      <md-card flex flex-gt-md="30" flex="30" flex-xs="100" flex-gt-xs="100">
+        <img src="assets/img/sangue.jpg" class="md-card-image" alt="Washed Out">
+        <md-card-content>
+          <h2 class="md-title">Doação de Sangue</h2>
+          <p>
+            Iniciou, no último dia 19, a Campanha de doação de brinquedos novos ou usados do setor de limpeza e conservação. Organizado pela Federação Nacional das Empresas Prestadoras de Serviços de Limpeza e Conservação...
           </p>
         </md-card-content>
        <!--  <div class="md-actions" layout="row" layout-align="end center">
