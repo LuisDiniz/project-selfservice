@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="description" content="">
+	  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	  <title>Login</title>
+	  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+	  <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
+	  <link rel="stylesheet" href="./assets/css/app.css"/>
+	  <link rel="stylesheet" href="./assets/css/style.css"/>
+	</head>
+
+	<body ng-cloak layout="column" ng-controller="loginCtrl">
+	  
+		<md-toolbar layout="row" class="md-toolbar-tools">
+
+			<h1>Angular Material - Login</h1>
+
+		</md-toolbar>
+
+ 		<form flex name="userLogin" layout="row" layout-align="center center">
+
+ 			<md-card flex flex-gt-md="25" layout-padding>
+
+				<md-input-container>
+					<label>CPF</label>
+					<input name="cpf" ng-model="user.cpf" ng-pattern="/^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/">
+
+					<div ng-messages="userLogin.cpf.$error" ng-show="userLogin.cpf.$error" >
+						<div ng-message="pattern">Formato de CPF inválido. (111.111.111-11) </div>
+					</div>					
+				</md-input-container>
+
+				<md-input-container>
+					<label>Senha</label>
+					<input ng-model="user.senha" type="password">
+				</md-input-container>
+
+				<div layout layout-align="center">
+					<md-button type="submit" ng-click="logar()" class="md-raised md-primary">Login</md-button>
+					<md-button class="md-raised" ng-click="cadastrar()">Cadastrar</md-button>
+				</div>
+
+			</md-card>
+
+		</form>
+
+		<script src="./jspm_packages/system.js" type="text/javascript"></script>
+		<script src="./src/login/loginCtrl.js" type="text/javascript"></script>
+		<script src="config.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			System
+			.import('src/boot/boot')
+			.catch( console.error.bind(console) ); // make sure any errors print to console
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+		<title>Angular Material - Starter App</title>
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+		<link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
+		<link rel="stylesheet" href="./assets/app.css"/>
+	</head>
+
+	<bodyng-cloak layout="column" ng-controller="AppController as app">
+
+		<md-toolbar layout="row" class="md-toolbar-tools">
+
+			<h1>Angular Material - Cadastro</h1>
+
+		</md-toolbar>    
+
+		<form name="userForm" layout="row" layout-align="center center">
+
+			<md-card flex flex-gt-md="50" layout-padding layout-align="space-around">
+			
+				<div layout>
+					<md-input-container flex="70" class="md-block" flex-gt-sm layout-fill>
+						<label>Nome</label>
+						<input ng-model="user.nome">
+					</md-input-container>
+
+					<md-input-container class="md-block" flex-gt-sm layout-fill>
+						<label>CPF</label>
+						<input name="cpf" required ng-model="user.cpf" type="number" ng-pattern="/^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/">
+						<div ng-messages="userForm.cpf.$error" ng-hide="showHints">
+							<div ng-message="pattern">###.###.###-## - Formato de CPF inválido.</div>
+						</div>						
+					</md-input-container>
+				</div>
+
+				<div layout>
+					<md-input-container class="md-block" layout-fill>
+						<label>Senha</label>
+						<input required ng-model="user.senha" type="password">
+					</md-input-container>
+
+					<md-input-container class="md-block" layout-fill>
+						<label>Repetir a senha</label>
+						<input required ng-model="user.repetirSenha" type="password">
+					</md-input-container>
+				</div>
+
+				<div layout>				
+					<md-input-container class="md-block" layout-fill>
+				      <label>E-mail</label>
+				      <input ng-model="user.email"  type="email">
+				    </md-input-container>
+				</div>
+
+				<div layout layout-align="center">
+					<md-button class="md-raised md-primary">Concluir</md-button>
+					<md-button class="md-raised">Cancelar</md-button>
+				</div>
+
+			</md-card>
+
+		</form>
+
+		<md-content flex layout="row" layout-align="center center">
+		</md-content>
+
+		<script src="./jspm_packages/system.js" type="text/javascript"></script>
+		<script src="config.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		System
+		    .import('src/boot/boot')
+		    .catch( console.error.bind(console) ); // make sure any errors print to console
+		</script>
+
+	</body>
+
+</html>
